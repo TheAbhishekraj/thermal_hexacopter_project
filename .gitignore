@@ -1,0 +1,47 @@
+# Ignore build artifacts
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+workspace/build/
+workspace/install/
+workspace/log/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+
+# Large binary files (use Git LFS if needed)
+*.bag
+*.mp4
+*.avi
+*.mkv
+
+# Docker
+.dockerignore
+
+# Simulation artifacts
+.gazebo/
