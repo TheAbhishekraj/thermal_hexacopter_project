@@ -1,0 +1,31 @@
+# System Requirements for Thermal Hexacopter PhD Project
+
+## Python Packages
+# None required for host system - all Python dependencies run inside Docker
+
+## System Packages (Ubuntu/Debian)
+# Install with: sudo apt install <package>
+
+# Video recording
+ffmpeg
+
+# X11 forwarding (usually pre-installed)
+x11-xserver-utils
+xauth
+
+# Docker (install separately via Docker's official repository)
+# See: https://docs.docker.com/engine/install/ubuntu/
+
+## Docker Image
+# hexacopter_lab_safe_copy (pre-built, contains all ROS 2 + PX4 + Gazebo dependencies)
+
+## Hardware Requirements
+# - RAM: 8GB minimum, 16GB recommended
+# - CPU: 4+ cores recommended
+# - GPU: Optional (software rendering supported)
+# - Display: 1920x1080 or higher for recording
+
+## Notes
+# - All ROS 2, PX4, and Gazebo dependencies are containerized in Docker
+# - No need to install ROS 2, Gazebo, or PX4 on host system
+# - Python scripts (master_fly.py, audit_master.py) use only standard library
