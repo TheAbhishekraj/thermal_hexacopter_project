@@ -22,8 +22,15 @@ echo ""
 
 # Step 2: Start recording (optional)
 echo "📹 STEP 2: Screen recording"
-read -p "Do you want to record the mission? (y/n): " -n 1 -r
-echo ""
+# Check if interactive
+if [ -t 0 ]; then
+    read -p "Do you want to record the mission? (y/n): " -n 1 -r
+    echo ""
+else
+    echo "Not interactive, defaulting to 'n'"
+    REPLY="n"
+fi
+
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     TIMESTAMP=$(date +%Y%m%d_%H%M%S)
@@ -51,16 +58,24 @@ echo "🚀 STEP 3: Launching Bihar world simulation..."
 echo "This will open Gazebo in a new window. Wait for it to fully load."
 echo ""
 
-docker run -it --rm --privileged --network=host \
+# Configure Docker flags based on TTY
+if [ -t 0 ]; then
+    DOCKER_FLAGS="-it"
+else
+    DOCKER_FLAGS=""
+fi
+
+docker run $DOCKER_FLAGS --rm --privileged --network=host \
     -e DISPLAY=$DISPLAY \
     -e LIBGL_ALWAYS_SOFTWARE=1 \
     -e QT_X11_NO_MITSHM=1 \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v "$PROJECT_DIR/workspace:/root/workspace" \
     -v "$PROJECT_DIR/scripts:/root/scripts" \
+    --entrypoint /bin/bash \
     --name hexacopter_gui \
     hexacopter_lab_safe_copy \
-    bash -c "cd /root/workspace && ../scripts/visual_hexacopter_bihar.sh; echo ''; echo 'Simulation ended. Press Ctrl+D to exit.'; bash"
+    -c "cd /root/workspace && ../scripts/visual_hexacopter_bihar.sh; echo ''; echo 'Simulation ended. Press Ctrl+D to exit.'; bash"
 
 # Cleanup
 echo ""

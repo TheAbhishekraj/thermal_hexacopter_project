@@ -44,11 +44,11 @@ export PX4_GZ_MODEL=agri_hexacopter_drone
 
 # 7. Bihar World Selection
 echo "🌾 Loading Bihar Maize Farm World..."
-export PX4_GZ_WORLD=bihar_maize_farm
+export PX4_GZ_WORLD=bihar_maize
 
 # 8. Launch Simulation with VTOL Mixer
 echo "🚀 Launching PX4 SITL with Bihar World..."
-echo "   - World: bihar_maize_farm"
+echo "   - World: bihar_maize"
 echo "   - Model: agri_hexacopter_drone"
 echo "   - Mixer: gz_standard_vtol (hexacopter physics)"
 echo "   - GPS: 25.344644°N, 86.483958°E (Bihar, India)"
