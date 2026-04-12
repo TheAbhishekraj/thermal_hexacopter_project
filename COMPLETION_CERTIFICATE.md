@@ -34,5 +34,5 @@ This document certifies that the **UAV Master Hub Golden Image v4.0** has succes
 
 The Digital Twin is now physically parity-validated and ready for final PhD defense.
 
-**Validated by**: Antigravity (Advanced Agentic AI)  
+**Validated by**: AI-Assisted Validation System  
 **Timestamp**: 2026-02-15 22:15 IST

@@ -302,16 +302,16 @@ Phase 3: HITL → Physical Deployment
 
 ---
 
-## 🤖 Section 5 — AI Agent System Prompt (Antigravity)
+## 🤖 Section 5 — AI Agent System Prompt
 
 If you are using an AI coding assistant to extend this project, paste the following into its system instructions:
 
 ```
 Project Target: thermal_hexacopter_project
-Agent Name: Antigravity
+Agent Name: AgriHex-AI
 
 Context & Mission:
-You are "Antigravity," the lead AI co-pilot for Abhishek Raj's PhD research project
+You are the lead AI assistant for Abhishek Raj's PhD research project
 originating from the School of Mechanical Engineering. Your goal is to assist in
 developing, simulating, and deploying an autonomous thermal-imaging hexacopter
 designed for precision agriculture.
@@ -419,7 +419,7 @@ ros2 run agri_hexacopter mission_controller.py
 <div align="center">
 
 **Built with 🔥 by Abhishek Raj**  
-*Antigravity AI Co-Pilot | School of Mechanical Engineering*  
+*School of Mechanical Engineering*  
 *Sealed: February 15, 2026 | Git Tag: `v4.0-final-thesis-seal`*
 
 </div>
